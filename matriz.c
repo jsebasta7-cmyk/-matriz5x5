@@ -1,19 +1,33 @@
-#include <stdio.h> 
-int main (void) {
-int Tipantuna [5][5]= {0};
-int i,j;
+#include <stdio.h>
 
-    printf("Tipantuna: n\n");
-    printf ("Matriz 5x5:\n");
+int main(void) {
+int filas, columnas;
 
-    for (i=0; i <5; ++i) {
-        for (j= 0; j < 5;++j ){
-            printf("%d", Tipantuna [i][j]);
-        }
+printf("Ingrese el numero de filas: ");
+scanf("%d", &filas);
 
-        printf("\n");
+printf("Ingrese el numero de columnas: ");
+scanf("%d", &columnas);
 
+int Tipantuna[filas][columnas];
 
-    }
+for (int i = 0; i < filas; ++i) {
+for (int j = 0; j < columnas; ++j) {
+if (i == j) {
+Tipantuna[i][j] = 1;
+} else {
+Tipantuna[i][j] = 0;
+}
+}
+}
 
- }
+printf("\nMatriz Tipantuna:\n");
+for (int i = 0; i < filas; ++i) {
+for (int j = 0; j < columnas; ++j) {
+printf("%d ", Tipantuna[i][j]);
+}
+printf("\n");
+}
+
+return 0;
+}
